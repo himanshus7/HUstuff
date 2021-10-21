@@ -2,6 +2,8 @@ pipeline {
     agent { docker { image 'python:3.8-slim-buster' } }
     stages {
         stage('build') {
+          
+           app = docker.build("pydocker")
             steps {
                 sh 'python --version'
             }
